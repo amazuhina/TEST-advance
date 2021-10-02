@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import {ResultBlock} from "./components/result-block";
+import {Form} from "./components/form";
 
-function App() {
+
+const AppStl = styled.div` 
+  min-width: 320px;
+  overflow-x: hidden;
+`
+
+const ContainerStl = styled.div`
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+`
+
+const TitleStl = styled.h1`
+  color: #000;
+  text-align: center; 
+`
+
+
+export const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <AppStl>
+          <ContainerStl>
+              <TitleStl>Тестовое задание</TitleStl>
+              <Form/>
+              <ResultBlock/>
+          </ContainerStl>
+      </AppStl>
+  )
 }
 
-export default App;
