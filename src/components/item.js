@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 
@@ -22,6 +22,8 @@ const ItemStl = styled.div`
 export const Item = ({type, value, id}) => {
 
     const dispatch = useDispatch()
+
+    const [isHiddenBtn, setIsHiddenBtn] = useState(true)
 
 
     const onAddItem = () => {
@@ -58,6 +60,7 @@ export const Item = ({type, value, id}) => {
         }
 
         dispatch(setValue(payload))
+        setIsHiddenBtn(false)
     }
 
 
@@ -88,10 +91,13 @@ export const Item = ({type, value, id}) => {
             <ButtonAction
                 text={'+'}
                 onClick={onAddItem}
+                isShow={isHiddenBtn}
+
             />
             <ButtonAction
                 text={'-'}
                 onClick={onDeleteItem}
+                isShow={false}
             />
         </ItemStl>
     )

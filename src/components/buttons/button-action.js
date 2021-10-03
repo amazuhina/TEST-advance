@@ -15,14 +15,18 @@ const ButtonStl = styled.button`
   &:hover {
     background-color: #545d75;
   }
+  ${({isShow}) => isShow && `
+    display: none;
+  `}
 `
 
 
-export const ButtonAction = ({text, onClick}) => {
+export const ButtonAction = ({text, onClick, isShow}) => {
 
     return (
         <ButtonStl
             onClick={onClick}
+            isShow={isShow}
         >
             {text}
         </ButtonStl>
