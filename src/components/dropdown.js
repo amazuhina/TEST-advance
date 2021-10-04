@@ -32,7 +32,7 @@ export const Dropdown = ({type, onChange}) => {
             >
                 {
                     dropdownOptions.map(i => (
-                        <option selected={i === type}>{i}</option>
+                        <option value={type} key={i}>{i}</option>
                     ))
                 }
             </SelectStl>
